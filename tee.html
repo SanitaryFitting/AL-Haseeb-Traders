@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elbow</title>
+    <link rel="stylesheet" href="productdetail.css">
+</head>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: rgba(105, 98, 98, 0.2);
+    }
+
+    
+   .contact-bar {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.contact-item a {
+  color: rgb(8, 8, 8);
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap; /* Prevent link text from breaking */
+  transition: background 0.3s, color 0.3s;
+}
+
+.contact-item a:hover {
+  background-color: #0ff;
+  color: #000;
+}
+
+
+
+.hero-section {
+  background-image: url('imgback.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+  color: #fff;
+  
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* ✅ Makes it responsive */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-image img {
+  width: 280px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #0ff;
+}
+
+.hero-text p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ✅ Optional tweaks for smaller screens */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 24px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+}
+
+
+
+
+    .navbar {
+      background: rgb(2, 2, 2);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .navbar h1 { font-size: 22px; color: #0ff; }
+
+    .nav-links {
+      margin-top: 8px;
+      display: flex;
+      gap: 16px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      margin: 5px 10px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    
+    .nav-links a:hover{
+      color: red;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 20px 0 10px;
+      font-size: 20px;
+      color: #000;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      padding: 0 8px 60px;
+    }
+
+    @media (min-width: 768px) {
+      .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 8px 30px rgba(0,255,255,0.3);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .product-info {
+      padding: 12px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .product-info h3 { font-size: 16px; margin: 8px 0; }
+    .product-info p { font-size: 13px; color: #555; }
+    .price { color: #0ff; font-weight: bold; }
+    .price:hover{
+      color: rgb(223, 21, 21);
+    }
+
+    .buy-btn {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 2px solid #0ff;
+      background: transparent;
+      color: #0ff;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      font-size: 14px;
+      max-width: 100%;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .buy-btn:hover {
+      background: #0ff;
+      color: #000;
+      box-shadow: 0 0 8px #0ff;
+    
+    }
+   
+@media (max-width: 400px) {
+  .contact-item a {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+}
+
+    @media (max-width: 400px) {
+      .buy-btn {
+        width: 100%;
+      }
+    }
+
+    .footer {
+      background: rgba(2,2,2);
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      color: #ccc;
+    }
+  </style>
+<body>
+    
+  <!--***************** contact-bar ********************-->
+
+   <div class="contact-bar">
+  <div class="contact-item">
+    <a href="https://wa.me/923291855911" target="_blank">📱 WhatsApp</a>
+  </div>
+  <div class="contact-item">
+    <a href="mailto:mail.alhaseebtraders@gmail.com">📧 Email</a>
+  </div>
+  <div class="contact-item">
+    <a href="https://www.youtube.com/@ALHaseebTrader" target="_blank">▶️ YouTube</a>
+  </div>
+   <div class="contact-item">
+    <a href="https://www.facebook.com/profile.php?id=61577004824530" target="_blank">📘 Facebook</a>
+  </div>
+</div>
+
+       <!--************** navbar ********************* -->
+<div class="navbar">
+    <h1>AL Haseeb Traders</h1>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="RateList.html">Product Rate List</a>
+      <a href="AboutUs.html">About Us</a>
+    </div>
+  </div>
+
+<!--************** Displaying Product in Card ************-->
+<main class="product-container">
+        <div class="product-image-section">
+            <img src="tee.jpg" alt="Product Image" class="product-image">
+        </div>
+        <div class="product-details">
+            <h1 class="product-title">Tee</h1>
+            <div class="product-rating">★★★★☆ (4.5)</div>
+            <!-- <p class="product-price">RS: 90</p> -->
+            <h3 >  Hard UPVC Tee 
+            </h3>
+            <div class="table">
+                 
+<table class="tee">
+  <thead>
+    <tr>
+      <th>Sizes</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td >2"</td>
+      <td id="tee2inch">.</td>
+    </tr>
+    <tr>
+      <td >3"</td>
+      <td id="tee3inch">.</td>
+    </tr>
+    <tr>
+      <td >4"</td>
+      <td id="tee4inch">.</td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+<!-- *************** WhatsApp Button **************** -->
+<div class="whatsapp-btn-container">
+  <a class="buy-btn" 
+     href="https://wa.me/923291855911?text=Hello%20there!%20I%20need%20more%20Information!" 
+     target="_blank" 
+     rel="noopener noreferrer">
+    WhatsApp
+  </a>
+</div>
+
+           
+
+</div>
+            
+            
+    </main>
+
+
+   <!-- *************** ALL Products  *********************** -->
+<!--******************* Products ****************** -->
+  <div class="product-grid">
+
+    <div class="product-card">
+      <a href="elbow.html">
+        <img src="elbow90.jpg" alt="Elbow 90 degree" />
+      <div class="product-info">
+        <h3>Elbow 90° degree</h3>
+        <p>Hard PVC Fitting</p>
+        <div class="price">Click to See Price</div></a>
+        <a class="buy-btn" href="https://wa.me/923291855911">WhatsApp</a>
+        
+      </div>
+    </div>
+
+    <div class="product-card">
+      <a href="tee.html">
+        <img src="tee.jpg" alt="Tee" />
+      <div class="product-info">
+        <h3>Tee</h3>
+        <p>Hard PVC Fitting</p>
+        <div class="price">Click to See Price</div></a>
+        <a class="buy-btn" href="https://wa.me/923291855911">WhatsApp</a>
+        
+      </div>
+    </div>
+
+    <div class="product-card">
+      <a href="socket.html">
+        <img src="socket.jpg" alt="Socket" />
+      <div class="product-info">
+        <h3>Socket</h3>
+        <p>Hard PVC Fitting</p>
+        <div class="price">Click to See Price</div></a>
+        <a class="buy-btn" href="https://wa.me/923291855911">WhatsApp</a>
+        
+      </div>
+    </div>
+
+    <div class="product-card">
+      <a href="yee.html">
+        <img src="yee.jpg" alt="Yee" />
+      <div class="product-info">
+        <h3>Yee</h3>
+        <p>Hard PVC Fitting</p>
+        <div class="price">Click to See Price</div></a>
+        <a class="buy-btn" href="https://wa.me/923291855911">WhatsApp</a>
+        
+      </div>
+    </div>
+
+    <div class="product-card">
+      <a href="elbow45.html">
+        <img src="elbow45.jpg" alt="" />
+      <div class="product-info">
+        <h3>Elbow 45° Degree</h3>
+        <p>Hard PVC Fitting</p>
+        <div class="price">Click to See Price</div></a>
+        <a class="buy-btn" href="https://wa.me/923291855911">WhatsApp</a>
+        
+      </div>
+    </div>
+
+    <div class="product-card">
+      <a href="endcap.html">
+        <img src="endcap.jpg" alt="End Cap" />
+      <div class="product-info">
+        <h3>End Cap</h3>
+        <p>Hard PVC Fitting</p>
+        <div class="price">Click to See Price</div></a>
+        <a class="buy-btn" href="https://wa.me/923291855911">WhatsApp</a>
+        
+      </div>
+    </div>
+
+     <div class="product-card">
+      <a href="bend.html">
+        <img src="bend.jpg" alt="Bend" />
+      <div class="product-info">
+        <h3>Bend</h3>
+        <p>Hard PVC Fitting</p>
+        <div class="price">Click to See Price</div></a>
+        <a class="buy-btn" href="https://wa.me/923291855911">WhatsApp</a>
+        
+      </div>
+    </div>
+
+    <div class="product-card">
+      <a href="cowl.html">
+        <img src="cowl.jpg" alt="Cowl" />
+      <div class="product-info">
+        <h3>Cowl</h3>
+        <p>Hard PVC Fitting</p>
+        <div class="price">Click to See Price</div></a>
+        <a class="buy-btn" href="https://wa.me/923291855911">WhatsApp</a>
+        
+      </div>
+    </div>
+
+    <div class="product-card">
+      <a href="plugelbow.html">
+        <img src="plugelbow.jpg" alt="Plug Elbow" />
+      <div class="product-info">
+        <h3>Plug Elbow</h3>
+        <p>Hard PVC Fitting</p>
+        <div class="price">Click to See Price</div></a>
+        <a class="buy-btn" href="https://wa.me/923291855911">WhatsApp</a>
+        
+      </div>
+    </div>
+
+    <div class="product-card">
+      <a href="plugtee.html">
+        <img src="plugtee.jpg" alt="Plug Tee" />
+      <div class="product-info">
+        <h3>Plug Tee</h3>
+        <p>Hard PVC Fitting</p>
+        <div class="price">Click to See Price</div></a>
+        <a class="buy-btn" href="https://wa.me/923291855911">WhatsApp</a>
+        
+      </div>
+    </div>
+
+    <div class="product-card">
+      <a href="plugsocket.html">
+        <img src="cleanout.jpg" alt="Plug Socket" />
+      <div class="product-info">
+        <h3>Plug Socket</h3>
+        <p>Hard PVC Fitting</p>
+        <div class="price">Click to See Price</div></a>
+        <a class="buy-btn" href="https://wa.me/923291855911">WhatsApp</a>
+        
+      </div>
+    </div>
+    
+
+
+
+
+  </div>
+  
+  
+   <script src="main.js"></script>
+</body>
+</html>
